@@ -44,3 +44,11 @@ sudo service nginx stop
 sudo apt-get purge nginx nginx-common nginx-full nginx-core -y
 sudo apt-get autoremove
 sudo rm -rf /etc/nginx /var/log/nginx /var/lib/nginx
+
+# Change validation method to bypass nginx holds 80 port to issue cert
+/root/.acme.sh/acme.sh --issue -d <domain> -w /var/www/<domain> -k ec-256 --force
+
+/root/.acme.sh/acme.sh --install-cert -d <domain> --ecc --key-file /root/cert/<domain>/privkey.pem --fullchain-file /root/cert/<domain>/fullchain.pem --reloadcmd "x-ui restart"
+
+# Update cert forcibly
+/root/.acme.sh/acme.sh --renew -d <domain> --force --ecc
