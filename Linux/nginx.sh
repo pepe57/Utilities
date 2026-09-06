@@ -10,7 +10,7 @@ sudo systemctl restart nginx
 # Issue cert
 sudo apt install certbot python3-certbot-nginx -y
 certbot certonly --standalone --agree-tos -d <domain> -m <mail>
-#
+# Fix if 3x-ui panel issued a cert first
 /root/.acme.sh/acme.sh --issue -d <domain> -w /var/www/<domain> -k ec-256 --force
 /root/.acme.sh/acme.sh --install-cert -d <domain> --ecc --key-file /root/cert/<domain>/privkey.pem --fullchain-file /root/cert/<domain>/fullchain.pem --reloadcmd "x-ui restart"
 # Update cert forcibly
