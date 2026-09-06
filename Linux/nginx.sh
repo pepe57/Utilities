@@ -3,7 +3,7 @@ sudo apt install nginx libnginx-mod-stream -y
 
 # Hide nginx version
 sudo nano /etc/nginx/nginx.conf
-`server_tokens off;`
+server_tokens off;
 sudo nginx -t
 sudo systemctl restart nginx
 
