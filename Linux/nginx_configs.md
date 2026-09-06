@@ -81,6 +81,10 @@ server {
 
     root /var/www/<domain>;
     index index.html;
+
+    location /.well-known/acme-challenge/ {
+        root /var/www/<domain>;
+    }
 }
 
 server {
