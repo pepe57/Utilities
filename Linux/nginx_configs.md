@@ -59,13 +59,8 @@ server {
 
 ```
 map $host $redirect_target {
-    script.sophia.team https://raw.githubusercontent.com/farag2/Sophia-Script-for-Windows/refs/heads/main/Download_Sophia.ps1;
-    app.sophia.team    https://raw.githubusercontent.com/Sophia-Community/SophiApp/refs/heads/master/Download_SophiApp.ps1;
-    hv.sophia.team     https://raw.githubusercontent.com/farag2/Hyper-V/refs/heads/master/Hyper-V.ps1;
-    sl.sophia.team     https://raw.githubusercontent.com/farag2/Sophia-Script-for-Windows/refs/heads/main/Download_Latest_Sophia.ps1;
-    nv.sophia.team     https://raw.githubusercontent.com/farag2/NVidia-Driver-Downloader/refs/heads/main/Download_NVidia_Driver.ps1;
-    oobe.sophia.team   https://raw.githubusercontent.com/farag2/Utilities/refs/heads/master/OOBE/OOBE.ps1;
-    bd.sophia.team     https://raw.githubusercontent.com/farag2/Utilities/refs/heads/master/Download/Better_Discord.ps1;
+    <domain> URL;
+    <domain> URL;
 }
 
 server {
